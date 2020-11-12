@@ -58,12 +58,30 @@ export default class SelectHardware extends Component {
     )
   }
 
+  renderConnectToWalletButton () {
+    return (
+      <button
+        className={classnames('hw-connect__btn', {
+          'selected': this.state.selectedDevice === 'wallet',
+        })}
+        onClick={(_) => this.setState({ selectedDevice: 'wallet' })}
+      >
+        <img
+          className="hw-connect__btn__img"
+          src="images/wallet-logo.svg"
+          alt=""
+        />
+      </button>
+    )
+  }
+
   renderButtons () {
     return (
       <>
         <div className="hw-connect__btn-wrapper">
           {this.renderConnectToLedgerButton()}
           {this.renderConnectToTrezorButton()}
+          {this.renderConnectToWalletButton()}
         </div>
         <Button
           type="primary"
@@ -111,10 +129,11 @@ export default class SelectHardware extends Component {
     const links = {
       trezor: `<a class='hw-connect__get-hw__link' href='https://shop.trezor.io/?a=metamask' target='_blank'>Trezor</a>`,
       ledger: `<a class='hw-connect__get-hw__link' href='https://www.ledger.com/products/ledger-nano-s?r=17c4991a03fa&tracker=MY_TRACKER' target='_blank'>Ledger</a>`,
+      wallet: `<a class='hw-connect__get-hw__link' href='https://pro.wallet.io/hardware' target='_blank'>Wallet</a>`,
     }
 
     const text = this.context.t('orderOneHere')
-    const response = text.replace('Trezor', links.trezor).replace('Ledger', links.ledger)
+    const response = text.replace('Trezor', links.trezor).replace('Ledger', links.ledger).replace('Ledger', links.wallet)
 
     return (
       <div
