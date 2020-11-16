@@ -216,6 +216,7 @@ export default class MetamaskController extends EventEmitter {
       this.accountTracker._updateAccounts()
     })
 
+    // POINT 引入了硬件与Ledger通信的接口
     const additionalKeyrings = [TrezorKeyring, LedgerBridgeKeyring]
     this.keyringController = new KeyringController({
       keyringTypes: additionalKeyrings,
@@ -893,7 +894,7 @@ export default class MetamaskController extends EventEmitter {
   //
   // Hardware
   //
-
+  // POINT 根据选择的硬件设备名称，选择对应的keyring
   async getKeyringForDevice (deviceName, hdPath = null) {
     let keyringName = null
     switch (deviceName) {
@@ -906,6 +907,7 @@ export default class MetamaskController extends EventEmitter {
       default:
         throw new Error('MetamaskController:getKeyringForDevice - Unknown device')
     }
+    // POINT 若没有keyring，会尝试添加新的
     let keyring = await this.keyringController.getKeyringsByType(keyringName)[0]
     if (!keyring) {
       keyring = await this.keyringController.addNewKeyring(keyringName)

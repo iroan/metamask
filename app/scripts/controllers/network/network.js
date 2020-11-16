@@ -39,6 +39,7 @@ const defaultProviderConfig = {
   ...defaultProviderConfigOpts,
 }
 
+// 以太坊网络controller
 export default class NetworkController extends EventEmitter {
 
   constructor (opts = {}) {
