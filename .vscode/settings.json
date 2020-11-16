@@ -1,0 +1,62 @@
+{
+
+    "commentAnchors.tags.sortMethod": "type",
+    "commentAnchors.tags.list": [
+        {
+            "tag": "POINT",
+            "iconColor": "red",
+            "highlightColor": "#3ea8ff",
+            "scope": "workspace"
+        },
+        {
+            "tag": "FIXME",
+            "iconColor": "red",
+            "highlightColor": "#F44336",
+            "scope": "workspace",
+            "enabled": false,
+        },
+        {
+            "tag": "STUB",
+            "iconColor": "purple",
+            "highlightColor": "#BA68C8",
+            "scope": "file",
+            "enabled": false
+        },
+        {
+            "tag": "NOTE",
+            "iconColor": "orange",
+            "highlightColor": "#FFB300",
+            "scope": "file",
+            "enabled": false
+        },
+        {
+            "tag": "TODO",
+            "iconColor": "orange",
+            "highlightColor": "#FFB300",
+            "scope": "file",
+            "enabled": false
+        },
+        {
+            "tag": "REVIEW",
+            "iconColor": "green",
+            "highlightColor": "#64DD17",
+            "scope": "workspace",
+            "enabled": false
+        },
+        {
+            "tag": "SECTION",
+            "iconColor": "blurple",
+            "highlightColor": "#896afc",
+            "scope": "workspace",
+            "behavior": "region",
+            "enabled": false
+        },
+        {
+            "tag": "LINK",
+            "iconColor": "#2ecc71",
+            "highlightColor": "#2ecc71",
+            "scope": "workspace",
+            "behavior": "link"
+        }
+    ]
+}
